@@ -3,7 +3,7 @@ from textblob import TextBlob
 import os
 
 # -------- CONFIG --------
-GOOGLE_API_KEY = OS.getnenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = os.getnenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 chat = genai.GenerativeModel("gemini-1.5-flash-002").start_chat()
 

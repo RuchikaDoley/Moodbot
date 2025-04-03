@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 # Initialize Flask app
-app = Flask("_name_")
+app = Flask("app")
 
 # Route to serve frontend
 @app.route("/")

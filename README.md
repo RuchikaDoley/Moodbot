@@ -2,7 +2,7 @@ Moodbot
 
 Moodbot is an interactive web application that detects the emotion behind a user’s message and responds in a way that matches their mood. It’s designed to act like a mini emotional companion—you type something in, and Moodbot figures out if you’re feeling happy, sad, or neutral, then responds with a thoughtful or uplifting message. It's a great mix of sentiment analysis and basic conversational AI, built with Python, Flask, and natural language processing (NLP).
 
-The backend taps into a pre-trained sentiment analysis model that deems input positive, negative, or neutral. But it doesn't stop at emotion detection—Moodbot goes one better by making the response personal. If you're down, it may send you a reassuring message or words of encouragement. If you're ecstatic, it congratulates you. This gives the app a sense of being alive and emotionally perceptive, not merely analytical.
+The backend taps into a trained sentiment analysis model that deems input joy, sadness, fear, etc. But it doesn't stop at emotion detection—Moodbot goes one better by making the response personal. If you're down, it may send you a reassuring message or words of encouragement. If you're ecstatic, it congratulates you. This gives the app a sense of being alive and emotionally perceptive, not merely analytical.
 
 To make all this function, the text you input is run through a preprocessing pipeline that tidies up the input—lowercase everything, stripping out punctuation, eliminating normal stopwords, and lemmatizing words so the model can see the core meaning. The tidied text is then passed to the trained model, which predicts the sentiment and fires the correct response.
 

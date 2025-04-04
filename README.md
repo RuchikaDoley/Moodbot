@@ -1,11 +1,23 @@
-Moodbot is an interactive web application that detects the emotion behind a user’s message and responds in a way that matches their mood. It’s designed to act like a mini emotional companion—you type something in, and Moodbot figures out if you’re feeling happy, sad, or neutral, then responds with a thoughtful or uplifting message. It's a great mix of sentiment analysis and basic conversational AI, built with Python, Flask, and natural language processing (NLP).
+Moodbot is an interactive web application that detects the emotion behind a user’s message and responds in a way that matches their mood. It’s designed to act like a mini emotional companion—you type something in, and Moodbot figures out if you’re feeling happy, sad, or neutral, then responds with a thoughtful or uplifting message. It's a great mix of sentiment analysis, conversational AI, and large language model (LLM) integration, built with Python, Flask, and natural language processing (NLP).
 
-The backend draws on a trained sentiment analysis model that classifies input as joyful, sad, fearful, and so on. But Moodbot doesn't just stop at detecting emotions-it makes the response personal. If you're down, it sends you a reassuring message or words of encouragement. If you're ecstatic, it congratulates you. This gives the app a sense of being alive and emotionally perceptive, not just analytical.
+The backend taps into a trained sentiment analysis model that identifies emotional tones such as joy, sadness, fear, and more. But it doesn't stop at detection—Moodbot goes a step further by making the response feel personal. If you're down, it may send you a reassuring message or comforting words. If you're excited, it cheers you on. This gives the app a sense of being emotionally aware, not just analytical.
 
-To get all this to work, the text you pass in goes through a preprocessing pipeline that cleans up the input—lowercase everything, remove punctuation, remove regular stopwords, and lemmatize words so the model can look at the underlying meaning. The cleaned-up text is then passed to the trained model, which makes the prediction of sentiment and triggers the appropriate response.
+To process user input, the app first runs the text through a preprocessing pipeline: converting everything to lowercase, removing punctuation, filtering out common stopwords, and lemmatizing words so the model can better understand the core meaning. The cleaned text is then passed to the trained model, which classifies the emotion and triggers an appropriate response.
 
-The model was trained on the Emotions Dataset for NLP in Kaggle: https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp. In particular, the training text data file in the dataset was utilized to instruct the model on how to identify different emotions.
+For generating rich, human-like replies, Moodbot also integrates the Gemini API—a powerful language model from Google. Once an emotion is detected, Gemini helps craft more dynamic, empathetic, and engaging responses tailored to that emotion. This allows Moodbot to blend rule-based sentiment classification with the creativity and flexibility of an LLM, improving the quality of conversations and enhancing the user experience.
 
-The project is organized into clearly defined modules: server.py handles web server and app routes, preprocessing_py.py handles cleaning of text, and a folder named SentimentAnalysis has the trained model stored in it. The frontend is built from plain HTML templates and allows users to easily interact with the bot.
+The model was trained using the Emotions Dataset for NLP available on Kaggle: https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp. Specifically, the training text data file from this dataset was used to teach the model how to recognize a range of emotions.
 
-Moodbot is a simple-to-work-on project for newbies that shows how emotional intelligence can be embedded in software. It's excellent for learning NLP, Flask web development, or chatbot development. It can be enhanced easily by training it on other emotions (e.g., anger, excitement, or fear), fine-tuning the model, or making the responses more dynamic. If you're curious about AI or simply want to make a sweet little web application that "felt" your mood, Moodbot's a good place to start!
+The project is modular and well-organized:
+
+server.py manages the Flask server and application routes.
+
+preprocessing_py.py handles text preprocessing and cleanup.
+
+SentimentAnalysis/ contains the trained model and related utilities.
+
+Basic HTML templates make up the frontend for user interaction.
+
+Moodbot is a beginner-friendly project that illustrates how emotional intelligence can be embedded into software. It’s ideal for those exploring NLP, Flask development, sentiment analysis, or chatbot building. You can easily extend the project by supporting additional emotions (like anger or surprise), improving the model’s accuracy, or making responses even more nuanced with further Gemini API prompts.
+
+Whether you're diving into AI or just want to create a simple but emotionally aware chatbot, Moodbot is a great place to start!
